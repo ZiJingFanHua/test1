@@ -3,8 +3,10 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Carousel from 'element-ui'
 
 Vue.config.productionTip = false
+Vue.use(Carousel)
 
 /* eslint-disable no-new */
 new Vue({
@@ -12,4 +14,5 @@ new Vue({
   router,
   components: { App },
   template: '<App/>'
+  // render: h => h(App)
 })
