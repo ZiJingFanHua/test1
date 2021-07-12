@@ -1,6 +1,6 @@
 <template>
-  <div class="Nav">
-   <NavBar>
+  <div id="home">
+   <NavBar class="Nav">
     <div slot="left">
       <div class="nav-left-box">
       <img src="../assets/img/login-head.png" alt="牧童游">
@@ -43,6 +43,18 @@ export default ({
 </script>
 
 <style lang="scss">
+#home {
+  padding-top: 60px;
+}
+.Nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  margin-bottom: 60px;
+  background-color: #ffffff;
+}
 .nav-left-box{
   display: flex;
   img {
@@ -52,6 +64,7 @@ export default ({
   .Title {
      margin: 12px 5px;
      line-height: 16px;
+     font-weight: 700;
   }
 }
 .nav-right-box {
@@ -61,6 +74,7 @@ export default ({
     margin: 0 10px;
     height: 16px;
     line-height: 16px;
+    font-weight: 700;
       &:hover {
       color: #00AE7D;
     }
