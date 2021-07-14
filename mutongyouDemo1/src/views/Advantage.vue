@@ -6,10 +6,10 @@
         <p>{{title_message}}</p>
       </div>
       <div slot="foot" class="advantage_foot">
-        <div v-for="adv in advantages" :key="adv" class="ad_foot_box">
+        <div v-for="adv in advantages" :key="adv.url" class="ad_foot_box">
           <div><img :src="adv.url" alt=""></div>
           <div class="adstitle">{{adv.atitle}}</div>
-          <div v-for="ads in adv.ads" :key="ads" class="ads">
+          <div v-for="ads in adv.ads" :key="ads.adstitle" class="ads">
             <div>{{ads.adstitle}}</div>
             <p>{{ads.adsmess}}</p>
           </div>

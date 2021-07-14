@@ -1,15 +1,23 @@
 <template>
   <div>
-        <MovePicture></MovePicture>
+    <div>
+      <Carousel></Carousel>
+    </div>
   </div>
 </template>
 
 <script>
-import MovePicture from '../views/MovePicture'
+import Carousel from '../components/common/FunCarousel'
 export default ({
   name: 'index',
   components: {
-    MovePicture
+    Carousel
+  },
+  methods: {
+    kkkk () {
+      console.log(typeof require('../assets/img/index/store-img1.png'))
+      console.log(typeof '2')
+    }
   }
 })
 </script>

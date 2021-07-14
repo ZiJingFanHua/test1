@@ -8,11 +8,11 @@
            <div v-for="tag in mtags" :key="tag">{{tag}}</div>
          </div>
          <div class="button_use">
-           <input type="button" :value="mbtn">
-         <InsertPic></InsertPic>
+           <input type="button" :value="mbtn" @click="Show">
+         <InsertPic :url="url"></InsertPic>
          </div>
       </div>
-      <div v-for="img in mimges" :key="img" :slot="img.slot" class="img_box">
+      <div v-for="img in mimges" :key="img.src" :slot="img.slot" class="img_box">
         <img :src="img.src" alt="">
       </div>
     </PS>
@@ -24,17 +24,25 @@ import PS from '../components/common/PictureShow'
 import InsertPic from '../components/common/InsertDraw'
 export default ({
   name: 'Merchant',
-  // data () {
-  //   return {
-  //     title: '乡村路由经营商户',
-  //     title_message: '帮助B端商户更好的服务C端消费者是我们的宗旨',
-  //     tags: ['乡村民宿', '乡村酒店', '度假山庄', '户外基地', '农场院子', '田园风光', '古镇古村', '乡村景区', '农家乐…'],
-  //     imges: [{src: require('../assets/img/index/img-11.png'), slot: 'picture_top'}, {src: require('../assets/img/index/img-12.png'), slot: 'picture_foot_right'}]
-  //   }
-  // },
+  data () {
+    return {
+      count: 0
+    }
+  },
   components: {
     PS,
     InsertPic
+  },
+  methods: {
+    Show () {
+      this.count++
+      let show = document.querySelector('.pic_show')
+      if (this.count % 2 === 1) {
+        show.style.display = 'block'
+      } else {
+        show.style.display = 'none'
+      }
+    }
   },
   props: {
     mtitle: {
@@ -51,18 +59,24 @@ export default ({
       type: Array
     },
     mimges: {
-      type: [Object]
+      type: Array
     },
     mbtn: {
       type: String,
       default: '立即进入'
     },
     mactivenum: {
-      type: menubar,
+      type: Number,
       default: 0
     },
     murl: {
       type: String
+    },
+    url: {
+      type: Array,
+      default: function () {
+        return null
+      }
     }
   }
 })
@@ -100,7 +114,7 @@ export default ({
     position: relative;
     margin: 100px 0 160px 0;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     input {
       width: 278px;
       height: 36px;

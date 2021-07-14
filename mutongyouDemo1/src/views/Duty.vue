@@ -1,7 +1,7 @@
 <template>
   <div>
    <BgColor>
-    <div v-for="item in items" :key="item" :slot="item.slot">
+    <div v-for="item in items" :key="item.src" :slot="item.slot">
       <div class="duty_img">
         <img :src="item.src" alt="">
       </div>

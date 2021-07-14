@@ -1,7 +1,7 @@
 <template>
   <div>
     <BgColor>
-    <div v-for="item in items" :key="item" :slot="item.slot">
+    <div v-for="item in items" :key="item.number" :slot="item.slot">
       <div class="number_out_box">
         <div class="number_in_box">
       <div class="number">

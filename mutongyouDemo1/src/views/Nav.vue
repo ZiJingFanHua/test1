@@ -9,7 +9,7 @@
     </div>
     <div slot="right">
       <div class="nav-right-box">
-        <a href="#" v-for="(item, index) in items" :class="{'active':index==0}" :key="item" @click="HighLight($event)">{{item}}</a>
+        <a :href="item.thref" v-for="(item, index) in items" :class="{'active':index==num}" :key="item.title" @click="HighLight($event)">{{item.title}}</a>
       </div>
     </div>
    </NavBar>
@@ -18,13 +18,12 @@
 
 <script>
 import NavBar from '../components/common/NavBar'
-
 export default ({
   name: 'Nav',
   data (event) {
     return {
       title: '牧童游科技',
-      items: ['首页', '产品服务', '客户案例', '关于我们', '加入我们']
+      items: [{title: '首页', thref: '/#/index'}, {title: '产品服务', thref: '/#/product'}, {title: '客户案例', thref: '/#/case'}, {title: '关于我们', thref: '/#/aboutus'}, {title: '加入我们', thref: '/#/joinus'}]
     }
   },
   methods: {
@@ -38,11 +37,18 @@ export default ({
   },
   components: {
     NavBar
+  },
+  props: {
+    num: {
+      type: Number,
+      default: 0
+    }
   }
 })
 </script>
 
 <style lang="scss">
+@import '../assets/css/common.css';
 #home {
   padding-top: 60px;
 }

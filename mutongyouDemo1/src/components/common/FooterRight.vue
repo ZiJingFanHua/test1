@@ -1,7 +1,7 @@
 <template>
   <div class="footer_right">
     <div class="footer_right_top">
-    <dl  v-for="message in messages" :key="message">
+    <dl  v-for="message in messages" :key="message.service">
       <dt>{{message[0]}}</dt>
       <!-- // eslint-disable-next-line vue/valid-v-if -->
       <dd v-for="(item, index) in message" :key="item" v-if="index>0">

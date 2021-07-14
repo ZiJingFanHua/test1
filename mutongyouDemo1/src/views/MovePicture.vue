@@ -1,12 +1,12 @@
 <template>
   <el-carousel :interval="5000" arrow="always" :height="height">
-    <el-carousel-item v-for="item in items" :key="item">
+    <el-carousel-item v-for="(item, index) in items" :key="item+index">
       <div class="picture">
       <img :src="item.imgsrc" alt="">
       <div class="picture_title">
-        <p v-for="tit in item.title" :key="tit">{{tit}}{{mess}}</p>
+        <p v-for="(tit, index) in item.title" :key="tit+index">{{tit}}</p>
         <div>
-          <span v-for="mes in item.message" :key="mes">{{mes}}</span>
+          <span v-for="(mes, index) in item.message" :key="mes+index">{{mes}}</span>
         </div>
       </div>
       </div>
@@ -16,7 +16,7 @@
 <script>
 
 export default ({
-  name: 'Carouse',
+  name: 'MovePicture',
   data (event) {
     return {
       title: '牧童游科技',

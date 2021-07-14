@@ -7,7 +7,7 @@
      <div class="friends_school">
     <h1>{{school_title}}</h1>
     <div class="school_img">
-      <div v-for="img in school_img_scr" :key="img">
+      <div v-for="img in school_img_scr" :key="img.imgsrc">
          <img :src="img.imgsrc" alt="">
       </div>
     </div>
@@ -16,7 +16,7 @@
     <div class="friends_company">
     <h1>{{company_title}}</h1>
     <div class="company_img">
-      <div v-for="img in company_img_scr" :key="img">
+      <div v-for="img in company_img_scr" :key="img.imgsrc">
          <img :src="img.imgsrc" alt="">
       </div>
     </div>

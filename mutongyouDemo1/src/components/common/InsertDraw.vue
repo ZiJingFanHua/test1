@@ -1,5 +1,5 @@
 <template>
-  <div class="pic_show">
+  <div class="pic_show" v-if="url[0].purl!=undefined">
     <div class="picture"><img :src="url[0].purl" alt=""></div>
     <div class="letter_arrow"></div>
   </div>
@@ -22,11 +22,12 @@ export default ({
 
 <style lang="scss" scoped>
 .pic_show {
-  // display: none;
+  display: none;
   width: 200px;
   height: 200px;
   position: absolute;
   top: -205px;
+  left: 44px;
   border: 1px solid #ebeef5;
   padding: 12px;
   margin-bottom: 12px;

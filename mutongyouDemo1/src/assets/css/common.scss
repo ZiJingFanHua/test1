@@ -1,3 +1,15 @@
 $bg_color_green: #00AE7D;
 $color_white: #ffffff;
 $color_black: #222223;
+.font_title {
+  font-size : 40px;
+  line-height: 50px;
+  text-align: center;
+  color: $color_black;
+}
+
+.font_title_message {
+  font-size : 16px;
+  line-height: 26px;
+  text-align: center;
+}
