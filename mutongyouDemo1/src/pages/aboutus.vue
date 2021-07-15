@@ -117,6 +117,7 @@ export default ({
   }
 }
 .page_culture {
+  background: #FAFAFB;
   .culture_box {
     display: flex;
     justify-content: space-between;

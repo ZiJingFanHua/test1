@@ -33,7 +33,18 @@ export default ({
     click1 (event) {
       this.id = document.querySelector('.is-active').id
       console.log(this)
+    },
+    moveTo (event) {
+      let CarouselMove = document.querySelectorAll('.carousel_move')
+      for (let i = 0; i < CarouselMove.length; i++) {
+        CarouselMove[i].addEventListener('mousemove', function () {
+          this.click()
+        })
+      }
     }
+  },
+  mounted () {
+    this.moveTo()
   }
 })
 </script>
@@ -70,6 +81,7 @@ export default ({
     margin-top: 60px;
     p {
       background: #FFFFFF;
+      height: 60px;
       margin-top: 50px;
       margin-bottom: 55px;
     }
