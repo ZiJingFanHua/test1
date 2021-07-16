@@ -1,0 +1,88 @@
+<template>
+  <div id="home">
+   <NavBar class="Nav">
+    <div slot="left">
+      <div class="nav-left-box">
+      <img src="../assets/img/login-head.png" alt="牧童游">
+      <div class="Title">{{title}}</div>
+      </div>
+    </div>
+   </NavBar>
+  </div>
+</template>
+
+<script>
+import NavBar from '../components/common/NavBar'
+export default ({
+  name: 'Nav',
+  data (event) {
+    return {
+      title: '牧童游科技',
+      items: [{title: '首页', thref: '/#/index'}, {title: '产品服务', thref: '/#/product'}, {title: '客户案例', thref: '/#/case'}, {title: '关于我们', thref: '/#/aboutus'}, {title: '加入我们', thref: '/#/joinus'}]
+    }
+  },
+  methods: {
+    HighLight () {
+      let RightBox = document.querySelector('.nav-right-box')
+      for (let j = 0; j < RightBox.children.length; j++) {
+        RightBox.children[j].className = ''
+      }
+      event.currentTarget.className = 'active'
+    }
+  },
+  components: {
+    NavBar
+  },
+  props: {
+    num: {
+      type: Number,
+      default: 0
+    }
+  }
+})
+</script>
+
+<style lang="scss">
+@import '../assets/css/common.css';
+// #home {
+//   padding-top: 60px;
+// }
+.Nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  margin-bottom: 60px;
+  background-color: #ffffff;
+}
+.nav-left-box{
+  display: flex;
+  img {
+    width: 40px;
+    height: 40px;
+  }
+  .Title {
+     margin: 12px 5px;
+     line-height: 16px;
+     font-weight: 700;
+  }
+}
+.nav-right-box {
+  display: flex;
+  flex-direction: row;
+  a {
+    margin: 0 10px;
+    height: 16px;
+    line-height: 16px;
+    font-weight: 700;
+      &:hover {
+      color: #00AE7D;
+    }
+  }
+  .active {
+    color: #00AE7D;
+  }
+}
+
+</style>
